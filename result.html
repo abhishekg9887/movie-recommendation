@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🎥 Recommendations for "{{ movie }}"</h2>
+        <ul>
+            {% for rec in recs %}
+                <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Try another</a>
+    </div>
+</body>
+</html>
