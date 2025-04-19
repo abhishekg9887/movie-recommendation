@@ -7,6 +7,16 @@ app = Flask(__name__)
 
 # Load movie data
 movies = pd.read_csv("movies.csv")
+# Load movie data
+movies = pd.read_csv("movies.csv")
+
+# Fill NaN descriptions with empty strings
+movies["description"] = movies["description"].fillna("")
+
+# Fit the vectorizer
+tfidf = TfidfVectorizer(stop_words="english")
+tfidf_matrix = tfidf.fit_transform(movies["description"])
+
 tfidf = TfidfVectorizer(stop_words="english")
 tfidf_matrix = tfidf.fit_transform(movies["description"])
 
